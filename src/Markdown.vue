@@ -70,7 +70,6 @@ export default defineComponent({
 
     // 解析 Markdown 内容
     const parseMarkdown = () => {
-      console.log('MathJax:', window.MathJax)
       // 1. 先用 marked 解析 markdown
       let html = enhanceCodeBlock(marked.parse(props.value))
       // 2. 兼容处理：把所有 <code> 或 <code class=...> 包裹的 $...$ 或 \(...\) 替换回原始公式
@@ -78,15 +77,13 @@ export default defineComponent({
       htmlContent.value = html
       // 3. 渲染后 typeset
       nextTick(() => {
-        if (mathJax) {
-          if (!mathJax.isMathjaxConfig) {
-            mathJax.initMathjaxConfig()
-          }
-          mathJax.TypeSet()
+        const el = document.querySelector('.markdown-body')
+        // 修正：用 typesetPromise 并指定渲染区域
+        if (window.MathJax && window.MathJax.typesetPromise && el) {
+          window.MathJax.typesetPromise([el])
         }
         // 4. 绑定复制功能
         nextTick(() => {
-          const el = document.querySelector('.markdown-body')
           if (el) {
             bindCopyFunction(el)
           }

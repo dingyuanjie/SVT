@@ -1,18 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import { ElButton, ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
+import { ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
 import Markdown from './Markdown.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 
 const activeIndex = ref('1')
-const activeIndex100 = ref('1')
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
 const data = ref('')
 const handleClick = async (svt: any) => {
   try {
-    const response = await fetch(`/src/views/md/${svt}.md`)
+    const response = await fetch(`/md/${svt}.md`)
     data.value = await response.text()
   } catch (error) {
     console.error('Failed to load markdown content:', error)
@@ -20,6 +18,14 @@ const handleClick = async (svt: any) => {
 }
 onMounted(() => {
   handleClick('structural_generative_force_theory')
+})
+
+// 监听 data，每次内容变化后触发 MathJax 渲染
+watch(data, () => {
+  // @ts-ignore
+  if (window.MathJax && window.MathJax.typeset) {
+    window.MathJax.typeset()
+  }
 })
 </script>
 <template>
