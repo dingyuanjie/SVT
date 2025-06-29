@@ -42,7 +42,7 @@ export default defineComponent({
       }),
     )
     marked.setOptions({
-      gfm: false,
+      gfm: true, // 支持表格
     })
 
     // 增强代码块功能
