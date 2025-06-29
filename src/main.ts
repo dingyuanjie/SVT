@@ -1,5 +1,3 @@
-import mathJax from './Mathjax'
-mathJax.initMathjaxConfig()
 import './assets/main.css'
 
 import { createApp } from 'vue'

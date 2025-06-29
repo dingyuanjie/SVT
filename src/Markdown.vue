@@ -10,7 +10,6 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
 // 不喜欢Ant Design Vue，可以不用它
 import 'github-markdown-css/github-markdown-light.css'
-import mathJax from './MathJax'
 
 const doCopy = function (e) {
   const code = this.parentNode.parentNode.querySelector('code')

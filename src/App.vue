@@ -10,7 +10,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
 const data = ref('')
-const handleClick = async (svt) => {
+const handleClick = async (svt: any) => {
   try {
     const response = await fetch(`/src/views/md/${svt}.md`)
     data.value = await response.text()
@@ -246,12 +246,20 @@ onMounted(() => {
       </div>
       <div class="footer-section">
         <h3>相关链接</h3>
-        <p><a href="https://github.com/dingyuanjie/StructureVitalityTheory" target="_blank">GitHub 仓库</a></p>
+        <p>
+          <a href="https://github.com/dingyuanjie/StructureVitalityTheory" target="_blank"
+            >GitHub 仓库</a
+          >
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
       <p>Copyright © 2023-2024 Structural Vital Force Theory</p>
-      <p><a href="https://beian.miit.gov.cn/" target="_blank">备案/许可证编号为：鄂ICP备2025127028号</a></p>
+      <p>
+        <a href="https://beian.miit.gov.cn/" target="_blank"
+          >备案/许可证编号为：鄂ICP备2025127028号</a
+        >
+      </p>
     </div>
   </footer>
 </template>
