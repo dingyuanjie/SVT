@@ -52,6 +52,12 @@ watch(data, () => {
       @click="handleClick('Variable Speed of Light Derivation Structural Vital Force v5')"
       >Variable Speed of Light Derivation Structural Vital Force v5</el-menu-item
     >
+    <el-menu-item index="400-1" @click="handleClick('Structural Vital Force Homogeneous Scaling')"
+      >Structural Vital Force Homogeneous Scaling</el-menu-item
+    >
+    <el-menu-item index="400-2" @click="handleClick('Structural Vital Force Homogeneous Scaling2')"
+      >Structural Vital Force Homogeneous Scaling2</el-menu-item
+    >
     <el-sub-menu index="100">
       <template #title>Time–Mass–Energy Triangle Hypothesis</template>
       <el-menu-item index="100-1" @click="handleClick('Time–Mass–Energy Triangle Hypothesis')"
