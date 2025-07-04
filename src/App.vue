@@ -58,6 +58,11 @@ watch(data, () => {
     <el-menu-item index="400-2" @click="handleClick('Structural Vital Force Homogeneous Scaling2')"
       >Structural Vital Force Homogeneous Scaling2</el-menu-item
     >
+    <el-menu-item
+      index="400-3"
+      @click="handleClick('Structure Vital Force Perspective on Solar Fusion')"
+      >Structure Vital Force Perspective on Solar Fusion</el-menu-item
+    >
     <el-sub-menu index="100">
       <template #title>Time–Mass–Energy Triangle Hypothesis</template>
       <el-menu-item index="100-1" @click="handleClick('Time–Mass–Energy Triangle Hypothesis')"
