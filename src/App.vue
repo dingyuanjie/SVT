@@ -38,6 +38,14 @@ watch(data, () => {
     <el-menu-item index="1" @click="handleClick('structural_generative_force_theory')"
       >structural_generative_force_theory</el-menu-item
     >
+    <el-menu-item
+      index="1-0"
+      @click="handleClick('313 Structural Vital Force Unified Formula (v5.0)')"
+      >313 Structural Vital Force Unified Formula (v5.0)</el-menu-item
+    >
+    <el-menu-item index="1-1" @click="handleClick('313 结构生力 v6.0 - 三重螺旋扰动统一理论')"
+      >313 结构生力 v6.0 - 三重螺旋扰动统一理论</el-menu-item
+    >
     <el-sub-menu index="000">
       <template #title>contact</template>
       <el-menu-item index="000-1" @click="handleClick('LICENSE')">LICENSE</el-menu-item>
